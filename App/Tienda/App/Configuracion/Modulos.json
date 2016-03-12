@@ -1,0 +1,11 @@
+{
+	"Configuracion" : {
+		"Activo" : true
+	},
+	"Modulos" : {
+		"Inventario" : true,
+		"Proveedores" : true,
+		"Factura" : true,
+		"Cajas" : true
+	}
+}

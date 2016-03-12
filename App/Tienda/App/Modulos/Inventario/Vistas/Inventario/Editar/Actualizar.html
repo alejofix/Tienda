@@ -1,0 +1,76 @@
+	{% if Password == '1' %}
+		<form action="#" id="Form_act" name="Form_act">
+			<table>
+				{% for Columna, Valor in Consulta %}
+					{% if Columna != 'Id' %}
+						{% if Columna == 'Proveedor' %}
+							<tr>
+								<th>Proveedor</th>
+								<td>
+									<select name="Proveedor">
+										{% if Proveedores|length >= 1 %}
+											<option value="">Escoja Una Opción</option>
+											{% for Datos in Proveedores %}
+												{% if Datos.Id == Valor %}
+													<option value="{{Datos.Id}}" selected>{{Datos.Nombre}}</option>
+												{% else %}
+													<option value="{{Datos.Id}}">{{Datos.Nombre}}</option>
+												{% endif %}
+											{% endfor %}
+										{% else %}
+											<option value="">No Hay Proveedores Registrados</option>
+										{% endif %}
+									</select>
+								</td>
+							</tr>
+						{% elseif Columna == 'Cantidad' %}
+							<tr>
+								<th>{{Columna}}</th>
+								<td>
+									<div id="CargarContenidoInput"><a id="CambiarCantidad" class="button small">Modificar Cantidad</a></div>
+								</td>
+							</tr>
+						{% elseif Columna == 'Descripcion_Venta' %}
+							<tr>
+								<th>{{Columna}}</th>
+								<td>
+									<textarea name="{{Columna}}">{{Valor}}</textarea>
+								</td>
+							</tr>
+						{% elseif Columna == 'ActivoWeb' %}
+							<tr>
+								<th>{{Columna}}</th>
+								<td>
+									<select name="{{Columna}}">
+										<option value="">Escoja Una Opción</option>
+										{% if Valor == 'ACTIVO' %}
+											<option value="ACTIVO" selected>ACTIVO</option>
+											<option value="INACTIVO">INACTIVO</option>
+										{% else %}
+											<option value="ACTIVO">ACTIVO</option>
+											<option value="INACTIVO" selected>INACTIVO</option>
+										{% endif %}
+									</select>
+								</td>
+							</tr>
+						{% else %}
+							<tr>
+								<th>{{Columna}}</th>
+								<td><input type="text" name="{{Columna}}" value="{{Valor}}" /></td>
+							</tr>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+				<tr>
+					<td colspan="2">
+						<input type="hidden" name="Id" value="{{Consulta.Id}}" />
+						<button>Guardar</button>
+					</td>
+				</tr>
+			</table>
+		</form>
+		{{Script|raw}}
+		{{CargarInput|raw}}
+	{% else %}
+		<div class="alert warning">Los Datos No Son Correctos</div>
+	{% endif %}

@@ -1,0 +1,46 @@
+	{% extends 'Basica/Base.html' %}
+	
+	{% block Contenido %}
+		<div class="g12">
+			{% if Consulta.Cantidad >= 1 %}
+				<h1>Información del Inventario: {{Consulta.0.SubCategoria}}</h1>
+				<hr />
+				<div class="g6" id="CargarContenido">
+					<table style="width: 100%;">
+						<tbody>
+							{% for Columna, Valor in Consulta.0 %}
+								<tr>
+									<th>{{Titulo(Columna)}}</th>
+									<td>{{Valor}}</td>
+								</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+				<div class="g6">
+					<table>
+						<tr>
+							<td>
+								<form action="#" method="POST" id="FormEditar">
+									<input type="hidden" name="Id" value="{{Consulta.0.Id}}" />
+									<button>
+										Editar
+										<img src="{{NeuralRutaWebPublico}}/img/edit.png" />
+									</button>
+								</form>
+							</td>
+						</tr>
+					</table>
+				</div>
+				
+				{{Script|raw}}
+			{% else %}
+				<div class="alert note">No Existe El Inventario Seleccionado</div>
+			{% endif%}
+		</div>
+
+	{% endblock %}
+	
+	{% block Script %}
+		
+	{% endblock %}

@@ -1,0 +1,32 @@
+	{% extends 'Basica/Base.html' %}
+	
+	{% block Contenido %}
+		<div class="g12">
+			<h1>Alimentar Inventario</h1>
+			<hr />
+			<div id="Registro">
+				<form action="#" method="POST" id="BuscarRegistro">
+					<table style="width: 60%;">
+						<tr>
+							<td><strong>Número de Registro</strong></td>
+							<td style="vertical-align: middle; text-align: center;"><input type="text" name="Registro" class="g4" /></td>
+							<td><button>Buscar</button></td>
+						</tr>
+					</table>
+				</form>
+			</div>
+			<hr />
+			<div id="CargarContenido"></div>
+		</div>
+	{% endblock %}
+	
+	{% block Script %}
+		<style>
+			.error {
+				font-family: verdana;
+				font-size: 10px;
+				color: red;
+			}
+		</style>
+		{{Script|raw}}
+	{% endblock %}

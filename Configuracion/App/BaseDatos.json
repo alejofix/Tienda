@@ -1,0 +1,70 @@
+{
+	"Predeterminado": {
+		"Produccion" : {
+			"Doctrine" : { 
+				"dbname" : "base_datos",
+				"user" : "usuario",
+				"password" : "password",
+				"host" : "localhost",
+				"driver" : "pdo_mysql",
+				"charset" : "utf8"
+			},
+			"PDO" : { 
+				"dns" : "mysql:host=localhost;dbname=base_datos",
+				"user" : "usuario",
+				"password" : "password",
+				"parametros" : false
+			}
+		},
+		"Desarrollo" : {
+			"Doctrine" : { 
+				"dbname" : "base_datos",
+				"user" : "usuario",
+				"password" : "password",
+				"host" : "localhost",
+				"driver" : "pdo_mysql",
+				"charset" : "utf8"
+			},
+			"PDO" : { 
+				"dns" : "mysql:host=localhost;dbname=base_datos",
+				"user" : "usuario",
+				"password" : "password",
+				"parametros" : false
+			}
+		}
+	},
+	"Pedralbes": {
+		"Produccion" : {
+			"Doctrine" : { 
+				"dbname" : "pedralbes",
+				"user" : "root",
+				"password" : "cocacola0",
+				"host" : "localhost",
+				"driver" : "pdo_mysql",
+				"charset" : "utf8"
+			},
+			"PDO" : { 
+				"dns" : "mysql:host=localhost;dbname=pedralbes",
+				"user" : "root",
+				"password" : "cocacola0",
+				"parametros" : false
+			}
+		},
+		"Desarrollo" : {
+			"Doctrine" : { 
+				"dbname" : "pedralbes",
+				"user" : "root",
+				"password" : "cocacola0",
+				"host" : "localhost",
+				"driver" : "pdo_mysql",
+				"charset" : "utf8"
+			},
+			"PDO" : { 
+				"dns" : "mysql:host=localhost;dbname=pedralbes",
+				"user" : "root",
+				"password" : "cocacola0",
+				"parametros" : false
+			}
+		}
+	}
+}

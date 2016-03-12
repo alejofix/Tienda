@@ -1,0 +1,52 @@
+	
+	{% if Consulta|length >=1 %}
+	<div class="g12" id="DataCarga">
+		<div class="g6">
+			<form action="#" method="POST" id="FormActualizacion">
+				<table>
+					<tbody>
+						<tr>
+							<th><strong>Cantidad a Añadir</strong></th>
+							<td><input type="text" name="Cantidad" class="g4" /></td>
+						</tr>
+						<tr>
+							<td><button>Añadir</button></td>
+							<td><input type="hidden" name="Id" value="{{Consulta.Id}}" /></td>
+						</tr>
+					</tbody>
+				</table>
+			</form>
+		</div>
+		<div class="g6">
+			<table>
+				<thead>
+					<tr>
+						<th colspan="2">Información Referencia</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th><strong>Referencia</strong></th>
+						<td>{{Consulta.Referencia}}</td>
+					</tr>
+					<tr>
+						<th><strong>Categoria</strong></th>
+						<td>{{Consulta.Categoria}}</td>
+					</tr>
+					<tr>
+						<th><strong>SubCategoria</strong></th>
+						<td>{{Consulta.SubCategoria}}</td>
+					</tr>
+					<tr>
+						<th><strong>Cantidad Actual</strong></th>
+						<td>{{Consulta.Cantidad}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+		
+		{{Script|raw}}
+	{% else %}
+		<div class="alert warning">No Existe El Número de Referencia</div>
+	{% endif %}

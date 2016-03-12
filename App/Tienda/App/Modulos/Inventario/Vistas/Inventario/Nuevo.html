@@ -1,0 +1,156 @@
+	{% extends 'Basica/Base.html' %}
+	
+	{% block Contenido %}
+		<div class="g12">
+			<h2>Nuevo Inventario</h2>
+			<hr />
+			<ul class="breadcrumb" data-connect="breadcrumbcontent">
+				<li><a href="#" class="active">Inicio</a></li>
+				<li><a href="#" class="">Referencia</a></li>
+				<li><a href="#" class="">Categoria</a></li>
+				<li><a href="#" class="">Datos</a></li>
+				<li><a href="#" class="">Valores</a></li>
+				<li><a href="#" class="">Finalización</a></li>
+			</ul>
+			<form action="#" method="POST" id="Form">
+				<div class="widget sortable" id="widget_1">
+					<h3 class="handle">Nuevo Inventario</h3>
+					<div id="breadcrumbcontent">
+						<div style="display: block;">
+							<h3>Inicio</h3>
+							<p>
+							Ingrese los datos correspondientes según lo solicitado en este formulario
+							</p><hr>
+							<button class="next">Siguiente</button>
+							<p></p>
+						</div>
+						<div style="display: none;">
+							<h3>Referencia</h3>
+							<table border="0" style="width: 300px;">
+								<tr>
+									<td><strong>Referencia</strong>:</td>
+									<td><input type="text" name="Referencia" class="g10" /></td>
+								</tr>
+								<tr>
+									<td><strong>Proveedor</strong>:</td>
+									<td>
+										<select name="Proveedor" id="Proveedor">
+											{% if Proveedores|length >= 1 %}
+												<option value="">Escoja Una Opción</option>
+												{% for Puntero, Info in Proveedores %}
+													<option value="{{Info.Id}}">{{Info.Nombre}}</option>
+												{% endfor %}
+											{% else %}
+												<option value="">No Hay Proveedores Registrados</option>
+											{% endif %}
+										</select>
+									</td>
+								</tr>
+							</table>
+							<hr />
+							<button class="prev">Anterior</button><button class="next">Siguiente</button>
+							<p></p>
+						</div>
+						<div style="display: none;">
+							<h3>Categoria</h3>
+							<p>
+								<table style="width: auto;">
+									<tr>
+										<td>
+											<a href="#" id="SeleccionarCategoria" class="button small">Seleccionar Categoria</a>
+											<a href="#" id="NuevaCategoria" class="button small">Nueva Categoria</a></td>
+										<td><div id="CargarCategoria"></div></td>
+									</tr>
+									<tr>
+										<td><strong>SubCategoria (Nombre del Producto)</strong></td>
+										<td><input type="text" name="SubCategoria" id="SubCategoria" /></td>
+									</tr>
+								</table>
+							</p>
+							<hr />
+							<button class="prev">Anterior</button><button class="next">Siguiente</button>
+							<p></p>
+						</div>
+						<div style="display: none;">
+							<h3>Datos</h3>
+							<p>
+								<table style="width: auto;">
+									<tr>
+										<td><strong>Color</strong></td>
+										<td><input type="text" name="Color" /></td>
+									</tr>
+									<tr>
+										<td><strong>Material</strong></td>
+										<td><input type="text" name="Material" /></td>
+									</tr>
+									<tr>
+										<td><strong>Talla</strong></td>
+										<td><input type="text" name="Talla" /></td>
+									</tr>
+								</table>
+							</p>
+							<hr />
+							<button class="prev">Anterior</button><button class="next">Siguiente</button>
+							<p></p>
+						</div>
+						<div style="display: none;">
+							<h3>Valores</h3>
+							<p>
+								<table style="width: auto;">
+									<tr>
+										<td><strong>Valor Minimo</strong></td>
+										<td><input type="text" name="Valor_Minimo" /></td>
+									</tr>
+									<tr>
+										<td><strong>Valor Bodega</strong></td>
+										<td><input type="text" name="Valor_bodega" /></td>
+									</tr>
+									<tr>
+										<td><strong>Valor Almacen</strong></td>
+										<td><input type="text" name="Valor_Almacen" /></td>
+									</tr>
+								</table>
+							</p>
+							<hr />
+							<button class="prev">Anterior</button><button class="next">Siguiente</button>
+							<p></p>
+						</div>
+						<div style="display: none;">
+							<h3>Finalización</h3>
+							<p>
+								<table style="width: auto;">
+									<tr>
+										<td style="vertical-align: middle;"><strong>Descripción Completa del Producto</strong></td>
+										<td style="vertical-align: middle;"><textarea name="Descripcion_Venta"></textarea></td>
+									</tr>
+									<tr>
+										<td style="vertical-align: middle;"><strong>Activo para la Web</strong></td>
+										<td style="vertical-align: middle;"><input type="checkbox" name="ActivoWeb" value="ACTIVO" /></td>
+									</tr>
+								</table>
+							</p>
+							<p><button name="EnviarNuevoInv" value="Enviado" style="background-color: darkgreen; color: white;">Guardar</button></p>
+							<hr />
+							<button class="prev">Anterior</button>
+							<p></p>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+
+	{% endblock %}
+	
+	{% block Script %}
+		<style>
+			label.error {
+				font-family: verdana;
+				font-size: 10px;
+				color:red;
+				display: block;
+			}
+		</style>
+		{{SeleccionarCategoria|raw}}
+		{{NuevaCategoria|raw}}
+		{{Script|raw}}
+	{% endblock %}

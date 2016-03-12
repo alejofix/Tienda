@@ -1,0 +1,19 @@
+	<!DOCTYPE HTML>
+		<html>
+			<head>
+				<title>.:: Eliminar Registro Proveedor {{Consulta.Nombre}} ::.</title>
+			</head>
+			<body>
+				<h1>Eliminar Proveedor {{Consulta.Nombre}}</h1>
+				<div class="alert warning">Desea Eliminar El Proveedor de la Base de Datos?</div>
+				<p>Actualmente se eliminara de forma permanente de la base de datos la información de este proveedor.</p>
+				<form action="#" method="POST" id="Form">
+					<fieldset>
+						<label>Esta Seguro de Eliminar el Proveedor {{Consulta.Nombre}}</label>
+						<input type="hidden" name="Data" value="{{Consulta.Id|HexASCII}}" />
+						<button class="big" name="Eliminar" value="Eliminar" style="color: white; background: red;">Borrar</button>
+					</fieldset>
+				</form>
+				{{Script|raw}}
+			</body>
+		</html>

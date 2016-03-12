@@ -1,0 +1,64 @@
+{% extends 'Basica/Base.html' %}
+	
+	{% block Contenido %}
+		<div class="g12">
+			<h1>Nuevo Proveedor</h1>
+			<p>Ingreso de Nuevo Proveedor</p>
+			<a href="{{NeuralRutaApp}}/Proveedores/Nuevo" class="btn small fr">Nuevo Proveedor</a><br /><br />
+			<form action="#" method="POST" name="Form" id="Form">
+				<fieldset>
+					<label>Nuevo Proveedor</label>
+					<section>
+						<label for="text_field">Nombre del Proveedor</label>
+						<div><input type="text" id="Nombre" name="Nombre" /></div>
+					</section>
+					<section>
+						<label for="text_field">Dirección</label>
+						<div><input type="text" id="Direccion" name="Direccion" /></div>
+					</section>
+					<section>
+						<label for="text_field">Telefono</label>
+						<div><input type="text" id="Telefono_1" name="Telefono_1" /></div>
+					</section>
+					<section>
+						<label for="text_field">Contacto</label>
+						<div><input type="text" id="Contacto_1" name="Contacto_1" /></div>
+					</section>
+					<section>
+						<label for="text_field">Telefono</label>
+						<div><input type="text" id="Telefono_2" name="Telefono_2" /></div>
+					</section>
+					<section>
+						<label for="text_field">Contacto</label>
+						<div><input type="text" id="Contacto_2" name="Contacto_2" /></div>
+					</section>
+					<section>
+						<label for="textarea_auto">Comentarios</label>
+						<div>
+							<textarea id="Comentario" name="Comentario" data-autogrow="true" style="overflow: hidden; height: 70px;"></textarea>
+							<span>Comentarios adicionales sobre el proveedor</span>
+						</div>
+					</section>
+					<section>
+						<div>
+							<button class="reset" type="reset">Restaurar</button>
+							<button class="submit" name="GuardarProveedor" value="Guardar">Guardar</button>
+						</div>
+					</section>
+				</fieldset>
+			</form>
+		</div>
+	{% endblock %}
+	
+	{% block Script %}
+		<style>
+			.error {
+				font-family: verdana;
+				font-size: 10px;
+				font-weight: bold;
+				color: red;
+				margin-top: 10px;
+			}
+		</style>
+		{{Script|raw}}
+	{% endblock %}

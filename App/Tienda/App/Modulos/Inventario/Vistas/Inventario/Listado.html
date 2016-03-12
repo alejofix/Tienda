@@ -1,0 +1,47 @@
+	{% extends 'Basica/Base.html' %}
+	
+	{% block Contenido %}
+		<div class="g12">
+			<h1>Listado de Inventario</h1>
+			
+			{% if Consulta|length >= 1%}
+				<table class="datatable">
+					<thead>
+						<tr>
+							<th>Referencia</th>
+							<th>Proveedor</th>
+							<th>Categoria</th>
+							<th>SubCategoria</th>
+							<th>Cantidad</th>
+							<th>Estado</th>
+							<th>Info</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for Consecutivo, Info in Consulta %}
+							<tr>
+								<td>{{Info.Referencia}}</td>
+								<td>{{Info.Proveedor}}</td>
+								<td>{{Info.Categoria}}</td>
+								<td>{{Info.SubCategoria}}</td>
+								<td>{{Info.Cantidad}}</td>
+								<td>{{Info.Estado}}</td>
+								<td>
+									<a href="{{NeuralRutaApp}}/Inventario/Listado/Informacion/{{Info.Id|HEX}}">
+										<img src="{{NeuralRutaWebPublico}}/img/info.png" title="Información de {{Info.SubCategoria}}" />
+									</a>
+								</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			{% else %}
+				<div class="alert note">No Hay Registros en La Base de Datos</div>
+			{% endif %}
+		</div>
+
+	{% endblock %}
+	
+	{% block Script %}
+	
+	{% endblock %}

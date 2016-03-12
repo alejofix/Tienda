@@ -1,0 +1,56 @@
+	{% if Consulta|length >= 1%}
+		<form action="#" method="POST" name="Form" id="Form">
+			<fieldset>
+				<label>Actualizar Proveedor</label>
+				<section>
+					<label for="text_field">Nombre del Proveedor</label>
+					<div><input type="text" id="Nombre" name="Nombre" value="{{Consulta.Nombre}}" /></div>
+				</section>
+				<section>
+					<label for="text_field">Dirección</label>
+					<div><input type="text" id="Direccion" name="Direccion" value="{{Consulta.Direccion}}" /></div>
+				</section>
+				<section>
+					<label for="text_field">Telefono</label>
+					<div><input type="text" id="Telefono_1" name="Telefono_1" value="{{Consulta.Telefono_1}}" /></div>
+				</section>
+				<section>
+					<label for="text_field">Contacto</label>
+					<div><input type="text" id="Contacto_1" name="Contacto_1" value="{{Consulta.Contacto_1}}" /></div>
+				</section>
+				<section>
+					<label for="text_field">Telefono</label>
+					<div><input type="text" id="Telefono_2" name="Telefono_2" value="{{Consulta.Telefono_2}}" /></div>
+				</section>
+				<section>
+					<label for="text_field">Contacto</label>
+					<div><input type="text" id="Contacto_2" name="Contacto_2" value="{{Consulta.Contacto_2}}" /></div>
+				</section>
+				<section>
+					<label for="textarea_auto">Comentarios</label>
+					<div>
+						<textarea id="Comentario" name="Comentario" data-autogrow="true" style="overflow: hidden; height: 70px;">{{Consulta.Comentario}}</textarea>
+						<span>Comentarios adicionales sobre el proveedor</span>
+					</div>
+				</section>
+				<section>
+					<div>
+						<input type="hidden" name="Data" value="{{Consulta.Id|HexASCII}}" />
+						<button class="submit" name="ActualizarProveedor" value="Actualizar">Actualizar</button>
+					</div>
+				</section>
+			</fieldset>
+		</form>
+		<style>
+			.error {
+				font-family: verdana;
+				font-size: 10px;
+				font-weight: bold;
+				color: red;
+				margin-top: 10px;
+			}
+		</style>
+		{{Script|raw}}
+	{% else %}
+		<div class="alert i_access_denied red">No Existe El Proveedor Ingresado</div>
+	{% endif %}

@@ -1,0 +1,42 @@
+	{% extends 'Basica/Base.html' %}
+	
+	{% block Contenido %}
+		<div class="g12">
+			<h1>Listado de Proveedores</h1>
+			
+			{% if Consulta|length >= 1%}
+				<table class="datatable">
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>Nombre</th>
+							<th>Estado</th>
+							<th>Telefono</th>
+							<th>Información</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for Consecutivo, Info in Consulta %}
+							<tr>
+								{% for Data in Info%}
+									<td>{{Data}}</td>
+								{% endfor %}
+								<td>
+									<a href="{{NeuralRutaApp}}/Proveedores/Listado/Informacion/{{Info.Id|HexASCII}}">
+										<img src="{{NeuralRutaWebPublico}}/img/info.png" title="Más Información" />
+									</a>
+								</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			{% else %}
+				<div class="alert note">No Hay Registros en La Base de Datos</div>
+			{% endif %}
+		</div>
+
+	{% endblock %}
+	
+	{% block Script %}
+	
+	{% endblock %}

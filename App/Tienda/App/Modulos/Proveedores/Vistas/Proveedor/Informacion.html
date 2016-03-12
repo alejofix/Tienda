@@ -1,0 +1,33 @@
+	{% extends 'Basica/Base.html' %}
+	
+	{% block Contenido %}
+		<style>
+			label {
+				font-weight: bold;
+			}
+		</style>
+		<div class="g12">
+			{% if Consulta|length >= 1%}
+				<h1>Proveedor {{Consulta.Nombre}}</h1>
+				<a href="#" class="btn small fr" id="Actualizar">Actualizar</a>
+				<a href="#" class="btn small fr" id="Eliminar">Eliminar</a>
+				<hr />
+				<div id="Contenido">
+					<p><label>Nombre</label>: {{Consulta.Nombre}}</p>
+					<p><label>Estado</label>: {{Consulta.Estado}}</p>
+					<p><label>Dirección</label>: {{Consulta.Direccion}}</p>
+					<p><label>Telefono</label>: {{Consulta.Telefono_1}}</p>
+					<p><label>Contacto</label>: {{Consulta.Contacto_1}}</p>
+					<p><label>Telefono Secundario</label>: {{Consulta.Telefono_2}}</p>
+					<p><label>Contacto Secundario</label>: {{Consulta.Contacto_2}}</p>
+					<p><label>Comentario</label>: {{Consulta.Comentario}}</p>
+				</div>
+			{% else %}
+				<div class="alert i_access_denied red">No Existe El Proveedor Ingresado</div>
+			{% endif %}
+		</div>
+	{% endblock %}
+	
+	{% block Script %}
+		{{Script|raw}}
+	{% endblock %}

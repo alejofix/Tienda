@@ -1,0 +1,16 @@
+	{% if Peticion == 'SeleccionarCategoria' %}
+		<select name="Categoria" id="Categoria">
+			{% if Consulta|length >= 1%}
+				<option value="">Escoja Una Opción</option>
+				{% for Datos in Consulta %}
+					<option value="{{Datos.Categoria}}">{{Datos.Categoria}}</option>
+				{% endfor %}
+			{% else %}
+				<option value="">No Hay Categorias En El Inventario</option>
+			{% endif %}
+		</select>
+	{% elseif Peticion == 'NuevaCategoria' %}
+		<input type="text" name="Categoria" id="Categoria" />
+	{% else %}
+	
+	{% endif %}

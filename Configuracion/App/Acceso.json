@@ -1,0 +1,36 @@
+{
+	"Predeterminado" : {
+		"Carpeta": "Tienda",
+		"Entorno_Desarrollo": {
+			"Localhost" : { "Activo" : true, "ip" : ["::1", "127.0.0.1", "192.168.0.6"] },
+			"Externo" : { "Activo" : false }
+		},
+		"Criptografia" : {
+			"RIJNDAEL" : "789d569f08ed7055e94b4289a4195012",
+			"BLOWFISH" : "9b71d224bd62f3785d96d46ad3ea3d73319bfbc2890caadae2d"
+		},
+		"Error" : {
+			"404" : {
+				"Activo" : false, 
+				"Parametros" : { "Modulo" : false, "Controlador" : "Index", "Metodo" : "Index", "Parametros" : false }
+			}
+		}
+	},
+	"Tienda" : {
+		"Carpeta": "Tienda",
+		"Entorno_Desarrollo": {
+			"Localhost" : { "Activo" : true, "ip" : ["::1", "127.0.0.1", "192.168.0.6"] },
+			"Externo" : { "Activo" : false }
+		},
+		"Criptografia" : {
+			"RIJNDAEL" : "789d569f08ed7055e94b4289a4195012",
+			"BLOWFISH" : "9b71d224bd62f3785d96d46ad3ea3d73319bfbc2890caadae2d"
+		},
+		"Error" : {
+			"404" : {
+				"Activo" : false, 
+				"Parametros" : { "Modulo" : false, "Controlador" : "Index", "Metodo" : "Index", "Parametros" : false }
+			}
+		}
+	}
+}
